@@ -3,7 +3,8 @@
 ## Features
 - Add tasks
 - Delete tasks
-- Dark mode
+- Neon mode
+- Dream mode
 
 ## Tech Used
 - HTML
