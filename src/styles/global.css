@@ -1,0 +1,149 @@
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+body {
+  background: #000000 !important;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.neon-glow {
+  transition: transform 0.2s ease, box-shadow 0.3s ease
+}
+
+.neon-glow:hover {
+  transform: scale(1.08);
+}
+
+:root {
+  --accent: #ffffff;
+}
+
+.neon-bg {
+  min-height: 100vh;
+  background: #000;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.mood-glow {
+  box-shadow:
+    0 0 4px var(--accent),
+    0 0 6px var(--accent),
+    0 0 12px var(--accent);
+}
+
+/* 🌙 Dream / Pastel Mode */
+:root {
+  --bg-main: #000;
+  --glow-strength: 1;
+  --glow-blur: 25px;
+}
+
+.dream {
+  --bg-main: radial-gradient(
+    circle at top,
+    #fdf6ff 0%,
+    #eef7fb 35%,
+    #e6f2fa 70%,
+    #e1eef7 100%
+  );
+
+  --glow-blur: 14px;
+  --glow-strength: 0.35;
+}
+
+/* Apply background */
+.neon-bg {
+  background: var(--bg-main);
+  transition: background 0.6s ease;
+}
+
+.dream .mood-glow {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.45),
+    0 8px 24px rgba(0,0,0,0.06),
+    0 0 calc(var(--glow-blur) * var(--glow-strength)) var(--accent);
+}
+
+
+.dream input,
+.dream textarea {
+  background: rgba(255,255,255,0.55) !important;
+  color: #1a1a1a;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.dream input::placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.dream button {
+  backdrop-filter: blur(6px);
+}
+
+.dream button:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.6),
+    0 8px 30px rgba(0,0,0,0.12),
+    0 0 14px var(--accent);
+}
+
+.dream h1 {
+  color: #2b2b2b;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.dream p {
+  color: rgba(0,0,0,0.55);
+}
+
+.dream .mood-button {
+  background: rgba(255,255,255,0.55);
+  color: #2a2a2a;
+}
+
+.dream .mood-button:not(.active) {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
+}
+
+.dream .mood-button.active {
+  background: rgba(255,255,255,0.85);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.9),
+    0 0 18px var(--accent);
+}
+
+.tasks-subheading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: rgba(60, 60, 60, 0.7);
+}
+
+.task-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  color: #333;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.05),
+    0 0 20px var(--accent);
+}
+
+/* Checkbox contrast fix */
+.task-card input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+/* Delete icon visibility in Dream mode */
+.dream .delete-icon {
+  color: #ef4444;
+}
+
+
